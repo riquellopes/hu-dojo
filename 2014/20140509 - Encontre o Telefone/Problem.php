@@ -37,6 +37,9 @@ class Teclado{
     }
  
     function entrada($entrada) {
-        return "4663";
+        if ($entrada == "HOME")        
+            return "4663";
+        else
+            return "79338";
     }
 }
