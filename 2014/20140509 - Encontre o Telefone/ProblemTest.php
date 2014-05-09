@@ -19,9 +19,33 @@ phpunit --colors ProblemTest.php
 require dirname(__FILE__) . '/Problem.php';
 
 class ProblemTest extends PHPUnit_Framework_TestCase{
+    public $teclado;
+  function setUp() {
+    $this->teclado = new Teclado();
+  }
+  
 
-  function testFoo(){
-    $this->assertEquals(1, 2);
+  function test_letra_ABC_deve_ser_2(){
+    $this->assertEquals($this->teclado->tecla('A'), 2);
+    $this->assertEquals($this->teclado->tecla('B'), 2);
+    $this->assertEquals($this->teclado->tecla('C'), 2);
   }
 
+  function test_letra_DEF_deve_ser_3(){
+    $this->assertEquals($this->teclado->tecla('D'), 3);
+    $this->assertEquals($this->teclado->tecla('E'), 3);
+    $this->assertEquals($this->teclado->tecla('F'), 3);
+  }
+
+  function test_letra_D_deve_ser_3(){
+    $this->assertEquals($this->teclado->tecla('D'), 3);
+  }
+  
+  function test_alphanumerico_1_deve_ser_1() {
+    $this->assertEquals($this->teclado->tecla(1), 1);
+    $this->assertEquals($this->teclado->tecla('1'), 1);
+  }
+
+
+    
 }
