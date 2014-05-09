@@ -3,7 +3,7 @@
 class Teclado{
     public function tecla($letra){
         $array = array();
-        
+        $array['0'] = 0;        
         $array['1'] = 1;
         $array['A'] = 2;
         $array['B'] = 2;
@@ -24,6 +24,13 @@ class Teclado{
         $array['Q'] = 7;
         $array['R'] = 7;
         $array['S'] = 7;
+        $array['T'] = 8;
+        $array['U'] = 8;
+        $array['V'] = 8;
+        $array['W'] = 9;
+        $array['X'] = 9;
+        $array['Y'] = 9;
+        $array['Z'] = 9;
 
         return $array[$letra];
     }

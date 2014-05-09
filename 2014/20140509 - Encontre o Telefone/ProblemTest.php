@@ -53,11 +53,6 @@ class ProblemTest extends PHPUnit_Framework_TestCase{
     $this->assertEquals($this->teclado->tecla('N'), 6);
     $this->assertEquals($this->teclado->tecla('O'), 6);
   }
-  
-  function test_alphanumerico_1_deve_ser_1() {
-    $this->assertEquals($this->teclado->tecla(1), 1);
-    $this->assertEquals($this->teclado->tecla('1'), 1);
-  }
 
   function test_letra_PQRS_deve_ser_7(){
     $this->assertEquals($this->teclado->tecla('P'), 7);
@@ -66,6 +61,26 @@ class ProblemTest extends PHPUnit_Framework_TestCase{
     $this->assertEquals($this->teclado->tecla('S'), 7);
   }
 
+  function test_letra_TUV_deve_ser_8(){
+    $this->assertEquals($this->teclado->tecla('T'), 8);
+    $this->assertEquals($this->teclado->tecla('U'), 8);
+    $this->assertEquals($this->teclado->tecla('V'), 8);
+  }
+  
+  function test_letra_WXYZ_deve_ser_9(){
+    $this->assertEquals($this->teclado->tecla('W'), 9);
+    $this->assertEquals($this->teclado->tecla('X'), 9);
+    $this->assertEquals($this->teclado->tecla('Y'), 9);
+    $this->assertEquals($this->teclado->tecla('Z'), 9);
+  }
 
-    
+  function test_alphanumerico_0_deve_ser_0(){
+    $this->assertEquals($this->teclado->tecla(0), 0);
+    $this->assertEquals($this->teclado->tecla('0'), 0);
+  }
+
+  function test_alphanumerico_1_deve_ser_1() {
+    $this->assertEquals($this->teclado->tecla(1), 1);
+    $this->assertEquals($this->teclado->tecla('1'), 1);
+  }    
 }
