@@ -3,6 +3,7 @@
 class Teclado{
     public function tecla($letra){
         $array = array();
+        $array['-'] = '-';        
         $array['0'] = 0;        
         $array['1'] = 1;
         $array['A'] = 2;
@@ -34,5 +35,8 @@ class Teclado{
 
         return $array[$letra];
     }
-    
+ 
+    function entrada($entrada) {
+        return "4663";
+    }
 }

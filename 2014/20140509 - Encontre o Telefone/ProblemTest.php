@@ -83,4 +83,13 @@ class ProblemTest extends PHPUnit_Framework_TestCase{
     $this->assertEquals($this->teclado->tecla(1), 1);
     $this->assertEquals($this->teclado->tecla('1'), 1);
   }    
+
+  function test_hifen_deve_ser_hifen() {
+    $this->assertEquals($this->teclado->tecla('-'), '-');
+  }
+
+  function test_home_deve_ser_4663() {
+    $this->assertEquals($this->teclado->entrada('HOME'), '4663');
+  }
 }
+
