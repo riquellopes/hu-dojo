@@ -37,8 +37,16 @@ class ProblemTest extends PHPUnit_Framework_TestCase{
     $this->assertEquals($this->teclado->tecla('F'), 3);
   }
 
-  function test_letra_D_deve_ser_3(){
-    $this->assertEquals($this->teclado->tecla('D'), 3);
+  function test_letra_GHI_deve_ser_4(){
+    $this->assertEquals($this->teclado->tecla('G'), 4);
+    $this->assertEquals($this->teclado->tecla('H'), 4);
+    $this->assertEquals($this->teclado->tecla('I'), 4);
+  }
+
+  function test_letra_JKL_deve_ser_5(){
+    $this->assertEquals($this->teclado->tecla('J'), 5);
+    $this->assertEquals($this->teclado->tecla('K'), 5);
+    $this->assertEquals($this->teclado->tecla('L'), 5);
   }
   
   function test_alphanumerico_1_deve_ser_1() {
