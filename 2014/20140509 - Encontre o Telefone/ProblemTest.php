@@ -23,7 +23,6 @@ class ProblemTest extends PHPUnit_Framework_TestCase{
   function setUp() {
     $this->teclado = new Teclado();
   }
-  
 
   function test_letra_ABC_deve_ser_2(){
     $this->assertEquals($this->teclado->tecla('A'), 2);
@@ -58,6 +57,13 @@ class ProblemTest extends PHPUnit_Framework_TestCase{
   function test_alphanumerico_1_deve_ser_1() {
     $this->assertEquals($this->teclado->tecla(1), 1);
     $this->assertEquals($this->teclado->tecla('1'), 1);
+  }
+
+  function test_letra_PQRS_deve_ser_7(){
+    $this->assertEquals($this->teclado->tecla('P'), 7);
+    $this->assertEquals($this->teclado->tecla('Q'), 7);
+    $this->assertEquals($this->teclado->tecla('R'), 7);
+    $this->assertEquals($this->teclado->tecla('S'), 7);
   }
 
 

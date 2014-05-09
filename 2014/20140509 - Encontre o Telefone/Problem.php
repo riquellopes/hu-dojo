@@ -2,7 +2,9 @@
 
 class Teclado{
     public function tecla($letra){
-        $dicionario = array(2 => array(''));
+        $array = array();
+        
+        $array['1'] = 1;
         $array['A'] = 2;
         $array['B'] = 2;
         $array['C'] = 2;
@@ -15,19 +17,15 @@ class Teclado{
         $array['J'] = 5;
         $array['K'] = 5;
         $array['L'] = 5;
+        $array['M'] = 6;
+        $array['N'] = 6;
+        $array['O'] = 6;
+        $array['P'] = 7;
+        $array['Q'] = 7;
+        $array['R'] = 7;
+        $array['S'] = 7;
 
-        if (in_array($letra, array('D','E','F')))
-            return 3;
-        else if (in_array($letra, array('A','B','C')))
-            return 2;
-        else if (in_array($letra, array('G','H','I')))
-            return 4;
-        else if (in_array($letra, array('J','K','L')))
-            return 5;
-        else if (in_array($letra, array('M','N','O')))
-            return 6;
-        else            
-            return $letra;
+        return $array[$letra];
     }
     
 }
