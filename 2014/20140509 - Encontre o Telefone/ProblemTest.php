@@ -48,6 +48,12 @@ class ProblemTest extends PHPUnit_Framework_TestCase{
     $this->assertEquals($this->teclado->tecla('K'), 5);
     $this->assertEquals($this->teclado->tecla('L'), 5);
   }
+
+  function test_letra_MNO_deve_ser_6(){
+    $this->assertEquals($this->teclado->tecla('M'), 6);
+    $this->assertEquals($this->teclado->tecla('N'), 6);
+    $this->assertEquals($this->teclado->tecla('O'), 6);
+  }
   
   function test_alphanumerico_1_deve_ser_1() {
     $this->assertEquals($this->teclado->tecla(1), 1);
