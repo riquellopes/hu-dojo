@@ -7,11 +7,12 @@ class CaixaEletronico {
 		$return = array();
 
 		foreach ($this->_notas as $nota) {
-			if ($valor > $nota) {
-				$qtdNotasUsadas = ($valor / $nota);
-				$return[$nota] = $qtdNotasUsadas;
-
-				$valor = $valor - ($nota * $qtdNotasUsadas);
+			if ($valor >= $nota) {
+				$qtdNotasUsadas = (int) ($valor / $nota);
+				if ($qtdNotasUsadas > 0) {
+					$return[$nota] = $qtdNotasUsadas;
+					$valor = $valor - ($nota * $qtdNotasUsadas);
+				}
 			}
 
 			if ($valor == 0) {

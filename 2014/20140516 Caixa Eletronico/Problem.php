@@ -6,12 +6,17 @@ class CaixaEletronico {
 	public function saque($valor) {
 		$return = array();
 
+		if (in_array($valor, $this->_notas)) {
+			return array($valor => 1);
+		}
+
 		foreach ($this->_notas as $nota) {
 			if ($valor >= $nota) {
-				$qtdNotasUsadas = ($valor / $nota);
-				$return[$nota] = $qtdNotasUsadas;
-
-				$valor = $valor - ($nota * $qtdNotasUsadas);
+				$qtdNotasUsadas = (int) ($valor / $nota);
+				if ($qtdNotasUsadas > 0) {
+					$return[$nota] = $qtdNotasUsadas;
+					$valor = $valor - ($nota * $qtdNotasUsadas);
+				}
 			}
 
 			if ($valor == 0) {
