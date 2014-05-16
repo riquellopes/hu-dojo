@@ -65,15 +65,13 @@ class ProblemTest extends PHPUnit_Framework_TestCase{
         $this->assertEquals(array(100 => 2, 50 => 1, 20 => 1, 10 => 1), $caixaEletronico->saque(280));
     }
 
+    /**
+     * @expectedException InvalidArgumentException
+     * @expectedExceptionMessage Valor 25 inválido.
+     */
     function testFuncaoRetornaExceptionComNotasPara25(){
         $caixaEletronico = new CaixaEletronico();
-        try {
-            $caixaEletronico->saque(25);
-            $this->fail();
-        }
-        catch (Exception $e) {
-            $this->assertEquals(array(10 => 1), );
-        }
+        $caixaEletronico->saque(25);
     }
 
 }

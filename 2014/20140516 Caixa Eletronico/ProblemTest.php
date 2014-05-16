@@ -67,6 +67,7 @@ class ProblemTest extends PHPUnit_Framework_TestCase{
 
     /**
      * @expectedException InvalidArgumentException
+     * @expectedExceptionMessage Valor 25 inválido.
      */
     function testFuncaoRetornaExceptionComNotasPara25(){
         $caixaEletronico = new CaixaEletronico();
