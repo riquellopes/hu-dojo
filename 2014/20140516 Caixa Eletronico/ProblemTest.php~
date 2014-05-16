@@ -40,8 +40,13 @@ class ProblemTest extends PHPUnit_Framework_TestCase{
         $this->assertEquals(array(50 => 1), $caixaEletronico->saque(50));
     }
 
-        function testFuncaoRetornaArrayComNotasPara100(){
+    function testFuncaoRetornaArrayComNotasPara100(){
         $caixaEletronico = new CaixaEletronico();
         $this->assertEquals(array(100 => 1), $caixaEletronico->saque(100));
+    }
+
+    function testFuncaoRetornaArrayComNotasPara30(){
+        $caixaEletronico = new CaixaEletronico();
+        $this->assertEquals(array(20 => 1, 10 => 1), $caixaEletronico->saque(30));
     }
 }

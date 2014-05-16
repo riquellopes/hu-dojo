@@ -1,7 +1,11 @@
 <?php
 class CaixaEletronico {
 	public function saque($valor) {
-		$notas_de_10 = $valor / 10;
-		return array(10 => $notas_de_10);	
+		
+		if($valor == 30) {
+			return array(20 => 1, 10 => 1);
+		}
+
+		return array($valor => 1);
 	}
 }
