@@ -64,4 +64,13 @@ class ProblemTest extends PHPUnit_Framework_TestCase{
         $caixaEletronico = new CaixaEletronico();
         $this->assertEquals(array(100 => 2, 50 => 1, 20 => 1, 10 => 1), $caixaEletronico->saque(280));
     }
+
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    function testFuncaoRetornaExceptionComNotasPara25(){
+        $caixaEletronico = new CaixaEletronico();
+        $caixaEletronico->saque(25);
+    }
+
 }

@@ -24,6 +24,10 @@ class CaixaEletronico {
 			}
 		}
 
+		if ($valor != 0) {
+			throw new InvalidArgumentException("Valor $valor inválido.");
+		}
+
 		return $return;
 	}
 }
