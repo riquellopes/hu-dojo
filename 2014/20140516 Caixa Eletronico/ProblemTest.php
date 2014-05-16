@@ -20,49 +20,46 @@ require dirname(__FILE__) . '/Problem.php';
 
 class ProblemTest extends PHPUnit_Framework_TestCase{
 
+    private $_caixaEletronico;
+
+    function setUp(){
+        $this->_caixaEletronico = new CaixaEletronico();
+    }
+
     function testFuncaoRetornaArrayComNotas(){
-        $caixaEletronico = new CaixaEletronico();
-        $this->assertInternalType('array', $caixaEletronico->saque(10));
+        $this->assertInternalType('array', $this->_caixaEletronico->saque(10));
     }
 
     function testFuncaoRetornaArrayComNotasPara10(){
-        $caixaEletronico = new CaixaEletronico();
-        $this->assertEquals(array(10 => 1), $caixaEletronico->saque(10));
+        $this->assertEquals(array(10 => 1), $this->_caixaEletronico->saque(10));
     }
 
     function testFuncaoRetornaArrayComNotasPara20(){
-        $caixaEletronico = new CaixaEletronico();
-        $this->assertEquals(array(20 => 1), $caixaEletronico->saque(20));
+        $this->assertEquals(array(20 => 1), $this->_caixaEletronico->saque(20));
     }
 
     function testFuncaoRetornaArrayComNotasPara50(){
-        $caixaEletronico = new CaixaEletronico();
-        $this->assertEquals(array(50 => 1), $caixaEletronico->saque(50));
+        $this->assertEquals(array(50 => 1), $this->_caixaEletronico->saque(50));
     }
 
     function testFuncaoRetornaArrayComNotasPara100(){
-        $caixaEletronico = new CaixaEletronico();
-        $this->assertEquals(array(100 => 1), $caixaEletronico->saque(100));
+        $this->assertEquals(array(100 => 1), $this->_caixaEletronico->saque(100));
     }
 
     function testFuncaoRetornaArrayComNotasPara30(){
-        $caixaEletronico = new CaixaEletronico();
-        $this->assertEquals(array(20 => 1, 10 => 1), $caixaEletronico->saque(30));
+        $this->assertEquals(array(20 => 1, 10 => 1), $this->_caixaEletronico->saque(30));
     }
 
     function testFuncaoRetornaArrayComNotasPara40(){
-        $caixaEletronico = new CaixaEletronico();
-        $this->assertEquals(array(20 => 2), $caixaEletronico->saque(40));
+        $this->assertEquals(array(20 => 2), $this->_caixaEletronico->saque(40));
     }
 
     function testFuncaoRetornaArrayComNotasPara80(){
-        $caixaEletronico = new CaixaEletronico();
-        $this->assertEquals(array(50 => 1, 20 => 1, 10 => 1), $caixaEletronico->saque(80));
+        $this->assertEquals(array(50 => 1, 20 => 1, 10 => 1), $this->_caixaEletronico->saque(80));
     }
 
     function testFuncaoRetornaArrayComNotasPara280(){
-        $caixaEletronico = new CaixaEletronico();
-        $this->assertEquals(array(100 => 2, 50 => 1, 20 => 1, 10 => 1), $caixaEletronico->saque(280));
+        $this->assertEquals(array(100 => 2, 50 => 1, 20 => 1, 10 => 1), $this->_caixaEletronico->saque(280));
     }
 
     /**
@@ -70,8 +67,7 @@ class ProblemTest extends PHPUnit_Framework_TestCase{
      * @expectedExceptionMessage Valor 25 inválido.
      */
     function testFuncaoRetornaExceptionComNotasPara25(){
-        $caixaEletronico = new CaixaEletronico();
-        $caixaEletronico->saque(25);
+        $this->_caixaEletronico->saque(25);
     }
 
 }
