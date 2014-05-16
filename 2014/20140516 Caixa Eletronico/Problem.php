@@ -1,7 +1,16 @@
 <?php
 class CaixaEletronico {
+	
+	private $_notas = array(100, 50, 20, 10);
+
 	public function saque($valor) {
-		
+		$return = array();
+
+		foreach ($this->_notas as $nota) {
+			if ($valor > $nota) {
+				$return[] = ($valor / $nota);
+			}
+		}
 		if($valor == 30) {
 			return array(20 => 1, 10 => 1);
 		} elseif ($valor == 40) {
