@@ -95,18 +95,5 @@ class ProblemTest extends PHPUnit_Framework_TestCase{
   function test_SWEET_deve_ser_79338() {
     $this->assertEquals($this->teclado->entrada('SWEET'), '79338');
   }
-
-  //function test_SWEET_deve_ser_79338() {
-//    $this->assertEquals($this->teclado->entrada('1-HOME-SWEET-HOME'), '1-4663-79338-4663');
-  //}
-
-  function testeNumero() {
-    $a = 14.95;
-    $b = 14.01;
-    $d = 0.94;
-    $c = $a - $b - $d;
-    $this->assertEquals($c,  0);
-  }
-
 }
 
