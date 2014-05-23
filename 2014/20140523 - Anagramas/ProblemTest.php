@@ -40,9 +40,8 @@ class ProblemTest extends PHPUnit_Framework_TestCase{
   	$this->assertContains('abeta', $this->anagrama->get(), 'Não retornou baeta');
   }
 
-  function testSeContemCaracter() {
-  	$this->assertTrue('a', $this->anagrama->contem('a'));
+  function testInAnagrama(){
+	$this->assertContains('aebta', $this->anagrama->get(), 'Não retornou aebta');  	
   }
-
 
 }

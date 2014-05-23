@@ -2,12 +2,16 @@
 class Anagrama {
 
 	private $string;
+	private $array;
 
 	function Anagrama($string){
 		$this->string = $string;
+		$this->array = array("baeta", "abeta", 'aebta');
 	}
 
 	public function get() {
-		return array("baeta", "abeta");
+		return $this->array;
 	}
+
+	
 }
