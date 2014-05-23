@@ -23,7 +23,7 @@ class ProblemTest extends PHPUnit_Framework_TestCase{
     private $_caixaEletronico;
 
     function setUp(){
-        $this->_caixaEletronico = new CaixaEletronico();
+        $this->_caixaEletronico = new CaixaEletronico(array(100 => 2, 50 => 3, 20 => 3, 10 => 3));
     }
 
     function testFuncaoRetornaArrayComNotas(){
@@ -68,6 +68,10 @@ class ProblemTest extends PHPUnit_Framework_TestCase{
      */
     function testFuncaoRetornaExceptionComNotasPara25(){
         $this->_caixaEletronico->saque(25);
+    }
+
+    function testFuncaoRetornaArrayComNotasPara300(){
+        $this->assertEquals(array(100 => 2, 50 => 2), $this->_caixaEletronico->saque(300));
     }
 
 }
