@@ -20,8 +20,15 @@ require dirname(__FILE__) . '/Problem.php';
 
 class ProblemTest extends PHPUnit_Framework_TestCase{
 
-  function testFoo(){
-    $this->assertEquals(1, 2);
+  protected function setUp() {
+  	$this->anagrama = new anagrama();
+  }
+  function testSeRetornaString(){
+  	$this->assertInternalType(
+  		'string',
+  		$this->anagrama->get(),
+  		'Não é uma string'
+  	);
   }
 
 }
