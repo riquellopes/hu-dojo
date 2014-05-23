@@ -21,14 +21,19 @@ require dirname(__FILE__) . '/Problem.php';
 class ProblemTest extends PHPUnit_Framework_TestCase{
 
   protected function setUp() {
-  	$this->anagrama = new anagrama();
+  	$this->anagrama = new Anagrama("baeta");
   }
+
   function testSeRetornaString(){
   	$this->assertInternalType(
   		'string',
   		$this->anagrama->get(),
   		'Não é uma string'
   	);
+  }
+
+  function testSeRetornaBaeta() {
+  	$this->assertContains('baeta', $this->anagrama->get(), 'Não retornou baeta');
   }
 
 }
