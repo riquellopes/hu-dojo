@@ -36,4 +36,9 @@ class ProblemTest extends PHPUnit_Framework_TestCase{
   	$this->assertContains('baeta', $this->anagrama->get(), 'Não retornou baeta');
   }
 
+   function testSeRetornaAbeta() {
+  	$this->assertContains('abeta abeta', $this->anagrama->get(), 'Não retornou baeta');
+  }
+
+
 }

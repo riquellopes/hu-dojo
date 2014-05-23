@@ -8,6 +8,6 @@ class Anagrama {
 	}
 
 	public function get() {
-		return "baeta";
+		return array("baeta", "abeta");
 	}
 }
