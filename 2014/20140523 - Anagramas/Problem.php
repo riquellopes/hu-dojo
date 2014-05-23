@@ -6,23 +6,27 @@ class Anagrama {
 
 	function Anagrama($string){
 		$this->string = $string;
-		$this->array = array("baeta", "abeta", 'aebta');
+		$this->array = array();
 	}
 
 	public function get() {
 		$tmp = str_split($this->string);
 
-		for ($i=0; $i < 5; $i++) {
-			/*for($j = 0; $j < 5; $j++){
+		for ($i=0; $i < count($tmp); $i++) {
+		/*	for($j = 0; $j < 5; $j++){
 				if($i==$j){
 					continue;
 				} else {
 
 				}
 			}*/
-			$string = $this->string;
-			unset($this->string[$i]);
-			$this->array[] = $tmp.$string;
+
+
+
+			$string = str_split($this->string);
+			unset($string[$i]);
+			$string[$i] = $tmp[0];
+			$this->array[] = implode($string);
 			// unset
 		}
 
