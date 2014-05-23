@@ -12,7 +12,9 @@ class Anagrama {
 	public function get() {
 		for ($i=0; $i < 5; $i++) { 
 			$tmp = $this->string[$i];
-			// $this->array[] = ;
+			$string = $this->string;
+			unset($this->string[$i]);
+			$this->array[] = $tmp.$string;
 			// unset
 		}
 
