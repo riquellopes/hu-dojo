@@ -21,8 +21,6 @@ class Anagrama {
 				}
 			}*/
 
-
-
 			$string = str_split($this->string);
 			unset($string[$i]);
 			$string[$i] = $tmp[0];
