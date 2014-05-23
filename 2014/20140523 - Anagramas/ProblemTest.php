@@ -26,9 +26,9 @@ class ProblemTest extends PHPUnit_Framework_TestCase{
 
   function testSeRetornaString(){
   	$this->assertInternalType(
-  		'string',
+  		'array',
   		$this->anagrama->get(),
-  		'Não é uma string'
+  		'Não é um array'
   	);
   }
 
@@ -37,7 +37,11 @@ class ProblemTest extends PHPUnit_Framework_TestCase{
   }
 
    function testSeRetornaAbeta() {
-  	$this->assertContains('abeta abeta', $this->anagrama->get(), 'Não retornou baeta');
+  	$this->assertContains('abeta', $this->anagrama->get(), 'Não retornou baeta');
+  }
+
+  function testSeContemCaracter() {
+  	$this->assertTrue('a', $this->anagrama->contem('a'));
   }
 
 
