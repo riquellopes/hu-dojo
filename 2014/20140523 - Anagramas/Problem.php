@@ -10,8 +10,15 @@ class Anagrama {
 	}
 
 	public function get() {
-		for ($i=0; $i < 5; $i++) { 
-			$tmp = $this->string[$i];
+		$tmp = explode("", $this->string);
+		for ($i=0; $i < 5; $i++) {
+			/*for($j = 0; $j < 5; $j++){
+				if($i==$j){
+					continue;
+				} else {
+
+				}
+			}*/
 			$string = $this->string;
 			unset($this->string[$i]);
 			$this->array[] = $tmp.$string;
