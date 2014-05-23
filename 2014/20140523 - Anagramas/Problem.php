@@ -8,36 +8,25 @@ class Anagrama {
 	function Anagrama($string){
 		$this->string = $string;
 		$this->array = array();
+		$this->string_to_array = str_split($this->string);
+		$this->inverse = array_reverse($this->string_to_array);
 	}
 
 	public function get() {
-		$tmp = str_split($this->string);
-		$this->inverso = array_reverse($tmp);
-		if($this->index < count($tmp)-1){
-			$vtemp = $tmp[$this->index+1];
-			$tmp[$this->index+1] = $tmp[$this->index];
-			$tmp[$this->index] = $vtemp;
-			$str = implode("", $tmp);
-			$this->array[] =  $str;
+		if($this->index < count($this->string_to_array)-1) {
+			$vtemp = $this->string_to_array[$this->index+1];
+			$this->string_to_array[$this->index+1] = $this->string_to_array[$this->index];
+			$this->string_to_array[$this->index] = $vtemp;
+			$str = implode("", $this->string_to_array);
+			if($this->inverse != $str) {
+				$this->index++;
+				$this->array[] = $str;
+				$this->get();
+			}
+		} else {
+			$this->index = 0;
 			$this->get();
 		}
-
-		for ($i=0; $i < count($tmp); $i++) {
-			for($j = 0; $j < 5; $j++){
-				if($i==$j){
-					continue;
-				} 
-			}
-
-			$string = str_split($this->string);
-			unset($string[$i]);
-			$string[$i] = $tmp[0];
-			$this->array[] = implode($string);
-			// unset
-		}
-
 		return $this->array;
 	}
-
-	
 }
