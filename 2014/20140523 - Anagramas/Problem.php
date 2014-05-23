@@ -13,13 +13,11 @@ class Anagrama {
 		$tmp = str_split($this->string);
 
 		for ($i=0; $i < count($tmp); $i++) {
-		/*	for($j = 0; $j < 5; $j++){
+			for($j = 0; $j < 5; $j++){
 				if($i==$j){
 					continue;
-				} else {
-
-				}
-			}*/
+				} 
+			}
 
 			$string = str_split($this->string);
 			unset($string[$i]);
