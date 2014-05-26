@@ -14,6 +14,9 @@ Running Test:
 
 phpunit --colors ProblemTest.php
 
+
+http://dojopuzzles.com/problemas/exibe/anagramas/
+
 */
 
 require dirname(__FILE__) . '/Problem.php';
